@@ -1,0 +1,19 @@
+Abstract In this chapter, we give a brief introduction to learning to rank for information retrieval. Specifically, we first introduce the ranking problem by taking document retrieval as an example. Second, conventional ranking models proposed in
+the literature of information retrieval are reviewed, and widely used evaluation measures for ranking are mentioned. Third, the motivation of using machine learning
+technology to solve the problem of ranking is given, and existing learning-to-rank
+algorithms are categorized and briefly depicted.
+
+With the fast development of the Web, every one of us is experiencing a flood of
+information. A study1 conducted in 2005 estimated the World Wide Web to contain
+11.5 billion pages by January 2005. In the same year, Yahoo!2 announced that its
+search engine index contained more than 19.2 billion documents. It was estimated
+by http://www.worldwidewebsize.com/ that there were about 25 billion pages indexed by major search engines as of October 2008. Recently, the Google blog3
+reported that about one trillion web pages have been seen during their crawling and
+indexing. According to the above information, we can see that the number of webpages is growing very fast. Actually, the same story also happens to the number of
+websites. According to a report,4 the evolution of websites from 2000 to 2007 is
+shown in Fig. 1.1.
+The extremely large size of the Web makes it generally impossible for common
+users to locate their desired information by browsing the Web. As a consequence,
+efficient and effective information retrieval has become more important than ever,
+and the search engine (or information retrieval system) has become an essential tool
+for many people.
