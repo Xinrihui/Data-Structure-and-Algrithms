@@ -1,0 +1,6 @@
+  File "E:/python package/python-project/Beauty_of_data_structure_and_algrithms/53_Information_Retrieval/Project/source/Inverted_Index/Test.py", line 90, in <module>
+  File "E:/python package/python-project/Beauty_of_data_structure_and_algrithms/53_Information_Retrieval/Project/source/Inverted_Index/Test.py", line 47, in test
+    lines.saveAsSingleTextFile(sorted_tmp_index_file_dir)
+AttributeError: 'PipelinedRDD' object has no attribute 'saveAsSingleTextFile'
+
+

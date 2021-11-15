@@ -26,8 +26,19 @@
     (2) 使用 TF-IDF / BM25 计算文档的得分, 并根据文档得分对文档集合进行排序, 最后在 web 界面上呈现给用户
 
 
+### 2.效果展示
+
+![avatar](project/images/image1.png) 
+
+![avatar](project/images/image2.png) 
+
+
 ### Note
 
-更详细的设计文档 参见 /Project/docs/剖析搜索引擎背后的经典数据结构和算法.pdf
+详细设计文档见博客
+
+https://www.yinxiang.com/everhub/note/62819b63-9dc2-46a8-8ea4-ba84f638664b
+ 
+
 
 
