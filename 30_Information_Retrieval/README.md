@@ -30,7 +30,7 @@
 
 2. 倒排索引建造器 利用 Spark 排序 / 基于外存的多路归并排序 对爬取的原始网页文档中的 <单词,文档id>对 按照单词排序, 最后生成倒排索引
 
-### 1.3 倒排列表的搜索与排序 (/Project/Search_Engine)
+### 1.3 倒排列表的搜索与文档的排序 (/Project/Search_Engine)
 
 项目位置 [project/src/Search_Engine](project/src/Search_Engine)
 
