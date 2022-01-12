@@ -8,7 +8,7 @@
 
 ### 1.1 爬虫和网页文档解析
 
-项目位置 [/project/src/Web_Crawler](/project/src/Web_Crawler)
+项目位置 [project/src/Web_Crawler](project/src/Web_Crawler)
 
 1. 为了实现断点续爬, 在基于磁盘文件的队列(利用堆文件+首尾指针)上实现了广度优先搜索(BFS)
 
@@ -24,7 +24,7 @@
 
 ### 1.2 倒排索引建造器
 
-项目位置 [/project/src/Inverted_Index](/project/src/Inverted_Index)
+项目位置 [project/src/Inverted_Index](project/src/Inverted_Index)
 
 1. 在未使用数据库的情况下, 设计了倒排索引文件的底层存储结构(堆文件 + hash索引)
 
@@ -32,7 +32,7 @@
 
 ### 1.3 倒排列表的搜索与排序 (/Project/Search_Engine)
 
-项目位置 [/project/src/Search_Engine](/project/src/Search_Engine)
+项目位置 [project/src/Search_Engine](project/src/Search_Engine)
 
 1. 对用户在 web 界面输入的查询进行分词后, 在倒排索引中检索并返回包含查询词的文档
 
