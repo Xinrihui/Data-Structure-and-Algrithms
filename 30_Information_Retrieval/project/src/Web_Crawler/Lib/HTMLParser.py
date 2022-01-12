@@ -36,10 +36,7 @@ class HTMLParser:
     
     实现 HTML 的解析
     
-    依赖：
-    pip install lxml
-    pip install beautifulsoup4
-   
+
     功能：
     1.匹配 某个 tag 一次，并提取此 tag 中的内容
     2.返回文档中符合条件的所有 tag 和 它们的内容
