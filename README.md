@@ -1,6 +1,8 @@
 
 # 数据结构和算法 
 
+![avatar](docs/images/python3_logo.png) 
+
 使用 Python3 实现基础的数据结构和算法 
 
 ### 1.链表
