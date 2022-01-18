@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Baidu Baike Search Engine</title>
+    <title>Xiaohuihui Encyclopedia Search Engine</title>
     <style type="text/css">
         div#doc {width:800px}
     .pagination-page-info {
@@ -21,10 +21,15 @@
     }
     </style>
 </head>
+
 <body>
     <div id="container">
-        <div id="header">
-            <h1>Baidu Baike Search Engine</h1>
+        <div id="header" style="text-align:center;">
+
+            <h1>Xiaohuihui Encyclopedia Search Engine</h1>
+
+            <img src="https://img1.baidu.com/it/u=3924101700,2673689586&fm=26&fmt=auto" alt="xiaohuihui">
+
             <form name="search" action="/search/" method="POST">
                 <p>
                     {% if key %}
@@ -35,8 +40,10 @@
                     <input type="submit" value="Search">
                 </p>
             </form>
+
+
         </div>
-        <hr/>
+
         <!--{% block high_search%}-->
         <!--{% endblock %}-->
         {% if error%}
@@ -62,9 +69,9 @@
             <p>对不起，没有您搜索的网页！</p>
         {% endif %}
 		
-		<div id="footer">
+		<div id="footer" style="position:fixed; bottom:0; right:0;">
 			<hr>
-            &copy; 
+            &copy;
 
 			<script type="text/javascript">
 			var today = new Date();
@@ -72,7 +79,7 @@
 			document.write(year)
 			</script>
 
-			<a href="https://github.com/xinrihui/baidubaike-search-engine" target="_blank">https://github.com/xinrihui/baidubaike-search-engine</a>
+			<a href="https://github.com/Xinrihui/Data-Structure-and-Algrithms/tree/master/30_Information_Retrieval" target="_blank">https://github.com/xinrihui/baidubaike-search-engine</a>
         </div>
 		
     </div>

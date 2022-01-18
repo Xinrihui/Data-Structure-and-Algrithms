@@ -41,9 +41,12 @@
 
 ## 2.效果展示
 
-![avatar](project/docs/images/image1.png) 
+demo视频链接 [https://www.bilibili.com/video/BV1uL411c7K6/](https://www.bilibili.com/video/BV1uL411c7K6/)
 
-![avatar](project/docs/images/image2.png) 
+
+![avatar](project/docs/images/demo1.png) 
+
+![avatar](project/docs/images/demo2.png) 
 
 
 ## Note
