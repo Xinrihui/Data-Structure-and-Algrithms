@@ -53,7 +53,7 @@ demo视频链接 [https://www.bilibili.com/video/BV1uL411c7K6/](https://www.bili
 
 详细设计文档见笔记
 
-https://www.yinxiang.com/everhub/note/62819b63-9dc2-46a8-8ea4-ba84f638664b
+（修改中）
  
 
 
