@@ -110,6 +110,113 @@ class CircularQueue:
 
         return res
 
+
+class CircularDeque:
+    """
+    双端的循环队列
+
+    1. 左右两端均可实现插入和弹出
+
+    """
+
+    def __init__(self, k: int):
+
+        self.capacity = k + 1
+
+        self.data = [0] * self.capacity
+
+        self.head = 0
+        self.tail = 0
+
+    def insertFront(self, value: int) -> bool:
+
+        # 判断队列是否已满
+        if self.isFull():
+            return False
+
+        self.head = (self.head - 1) % self.capacity
+
+        self.data[self.head] = value
+
+        return True
+
+    def insertLast(self, value: int) -> bool:
+        """
+        从尾部插入
+
+        """
+
+        # 判断队列是否已满
+        if self.isFull():
+            return False
+
+        self.data[self.tail] = value
+
+        self.tail = (self.tail + 1) % self.capacity
+
+        return True
+
+    def deleteFront(self) -> bool:
+        """
+        从头部弹出
+
+        """
+        # 判断队列是否为空
+        if self.isEmpty():
+            return False
+
+        self.head = (self.head + 1) % self.capacity
+
+        return True
+
+    def deleteLast(self) -> bool:
+
+        # 判断队列是否为空
+        if self.isEmpty():
+            return False
+
+        self.tail = (self.tail - 1) % self.capacity
+
+        return True
+
+    def getFront(self) -> int:
+
+        # 判断队列是否为空
+        if self.isEmpty():
+            return -1
+
+        return self.data[self.head]
+
+    def getRear(self) -> int:
+
+        # 判断队列是否为空
+        if self.isEmpty():
+            return -1
+
+        index = (self.tail - 1) % self.capacity
+
+        return self.data[index]
+
+    def isEmpty(self) -> bool:
+
+        return self.head == self.tail
+
+    def isFull(self) -> bool:
+
+        return (self.tail + 1) % self.capacity == self.head
+
+
+# Your MyCircularDeque object will be instantiated and called as such:
+# obj = MyCircularDeque(k)
+# param_1 = obj.insertFront(value)
+# param_2 = obj.insertLast(value)
+# param_3 = obj.deleteFront()
+# param_4 = obj.deleteLast()
+# param_5 = obj.getFront()
+# param_6 = obj.getRear()
+# param_7 = obj.isEmpty()
+# param_8 = obj.isFull()
+
 class BlockingQueue:
     """
     阻塞队列

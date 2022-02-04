@@ -4,7 +4,7 @@ from collections import *
 import heapq
 
 
-class Priority_Queue(object):
+class PriorityQueue(object):
     """
     
     by XRH 
@@ -27,9 +27,7 @@ class Priority_Queue(object):
         """
 
         self.key_func = key_func
-
         self.compare_func = compare_func
-
 
         self.hash_table = {}
         self._data = []
@@ -47,7 +45,7 @@ class Priority_Queue(object):
             heapq.heapify(self._data)
 
         else:
-            self.length =0
+            self.length = 0
             self._data = []
 
     def __len__(self):
@@ -101,7 +99,16 @@ class Priority_Queue(object):
 
         return ele[1]
 
-    def  update(self, new_tuple):
+    def get_top(self):
+        """
+        返回堆顶元素
+        :return:
+        """
+        ele = self._data[0]
+
+        return ele[1]
+
+    def update(self, new_tuple):
         """
         从元组中 找到 key 和 用来调整堆的 值
         更新 key 对应的 元组 同时调整堆
@@ -117,15 +124,14 @@ class Priority_Queue(object):
         
         :return: 
         """
-        key= self.key_func(new_tuple)
+        key = self.key_func(new_tuple)
 
-        compare_value=self.compare_func(new_tuple)
+        compare_value = self.compare_func(new_tuple)
 
-        self.hash_table[key][0] =compare_value
+        self.hash_table[key][0] = compare_value
         self.hash_table[key][1] = new_tuple
 
         heapq.heapify(self._data)
-
 
     def update_byKey(self, key, value):
         """
@@ -144,42 +150,65 @@ class Priority_Queue(object):
 
         heapq.heapify(self._data)
 
+    def repalce_byKey(self, old_key, new_key, new_value):
+        """
+        通过 key 找到对应的元组, 对整个元组进行替换,  然后调整堆
+
+        self.hash_table= {'a': [0, ('a', 0)], 'b': [2, ('b', 2)], 'c': [3, ('c', 3)]}
+
+        old_key = 'a', new_key = 'aa', new_value=10
+
+        self.hash_table= {'aa': [0, ('aa', 10)], 'b': [2, ('b', 2)], 'c': [3, ('c', 3)]}
+
+        :param old_key:
+        :param new_key:
+        :param new_value:
+        :return:
+        """
+
+        self.hash_table[old_key][0] = new_value  # self.hash_table[key] 返回为 List（它也 在堆中被引用） 的内存地址 ，self.hash_table[key][0] 直接更改了 List 中的内容
+        self.hash_table[old_key][1] = (new_key, new_value)
+
+        self.hash_table[new_key] = self.hash_table[old_key]
+
+        del self.hash_table[old_key]
+
+        heapq.heapify(self._data)
+
 
 if __name__ == '__main__':
 
+    heap = PriorityQueue(key_func=lambda x: x[0], compare_func=lambda x: x[1])  #
 
-    # heap = Priority_Queue(key_func=lambda x: x[0], compare_func=lambda x: x[1])  #
+    heap.push(('a', 0))
+    heap.push(('b', 2))
+    heap.push(('c', 3))
+
+    print(heap.get_byKey('a'))  # 拿到键为'a' 的键值对 ('a', 0)
+
+    heap.repalce_byKey(old_key='a', new_key='aa', new_value=10)
+
+    # print(heap.hash_table)
+
+    print(heap.get_byKey('aa'))
+
+    print(heap.get_top())
+    # print(heap.pop())
+
+    heap.update_byKey('c', 4)
+    print(heap.pop())
+
+    # heap = PriorityQueue( key_func=lambda x: x[0], compare_func=lambda x: x[1])
     #
-    # heap.push(('a', 0))
-    # heap.push(('b', 2))
-    # heap.push(('c', 3))
+    # heap.push(('a', 0,'text' )) # ('a', 0,'node1')  key='a'  compare_value=0
+    # heap.push(('b',2,'text'))
+    # heap.push(('c', 3,'text'))
     #
-    # print(heap.get_byKey('a')) # 拿到键为'a' 的键值对 ('a', 0)
+    # print(heap.get_byKey('a')) # 拿到键为'a' 的 tuple
     #
     # print(heap.pop())
     #
-    # heap.update_byKey('b', 4)
+    # heap.update(('b',4,'hhh'))
+    #
     # print(heap.pop())
-
-
-    heap = Priority_Queue( key_func=lambda x: x[0], compare_func=lambda x: x[1])
-
-    heap.push(('a', 0,'text' )) # ('a', 0,'node1')  key='a'  compare_value=0
-    heap.push(('b',2,'text'))
-    heap.push(('c', 3,'text'))
-
-    print(heap.get_byKey('a')) # 拿到键为'a' 的 tuple
-
-    print(heap.pop())
-
-    heap.update(('b',4,'hhh'))
-
-    print(heap.pop())
-    print(heap.pop())
-
-
-
-
-
-
-
+    # print(heap.pop())
