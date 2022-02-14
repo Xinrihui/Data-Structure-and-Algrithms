@@ -43,7 +43,6 @@
 
 demo视频链接 [https://www.bilibili.com/video/BV1uL411c7K6/](https://www.bilibili.com/video/BV1uL411c7K6/)
 
-
 ![avatar](project/docs/images/demo1.png) 
 
 ![avatar](project/docs/images/demo2.png) 
@@ -51,9 +50,11 @@ demo视频链接 [https://www.bilibili.com/video/BV1uL411c7K6/](https://www.bili
 
 ## Note
 
-详细设计文档见笔记
+详细设计文档见 本人博客
 
-（修改中）
+[小灰灰的印象笔记](https://www.yinxiang.com/everhub/personal/uE6ks9te5W6UxSkcRz8mYQ)
+
+
  
 
 
