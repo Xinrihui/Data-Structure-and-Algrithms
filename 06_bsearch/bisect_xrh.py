@@ -97,15 +97,15 @@ if __name__ == '__main__':
     # IDE 测试 阶段：
 
     # 找不到 key
-    print(bis.bisect_key_left([], 1))  # 0
-    print(bis.bisect_key_left([3, 5, 7], 1))  # 0
-    print(bis.bisect_key_left([3, 5, 7], 4))  # 1
-    print(bis.bisect_key_left([3, 5, 7], 6))  # 2
-    print(bis.bisect_key_left([3, 5, 7], 8))  # 3
+    # print(bis.bisect_key_left([], 1))  # 0
+    # print(bis.bisect_key_left([3, 5, 7], 1))  # 0
+    # print(bis.bisect_key_left([3, 5, 7], 4))  # 1
+    # print(bis.bisect_key_left([3, 5, 7], 6))  # 2
+    # print(bis.bisect_key_left([3, 5, 7], 8))  # 3
 
     # 找到 key
-    print(bis.bisect_key_left([3, 5, 7], 3))  # 0
-    print(bis.bisect_key_left([3, 5, 7], 5))  # 1
+    # print(bis.bisect_key_left([3, 5, 7], 3))  # 0
+    # print(bis.bisect_key_left([3, 5, 7], 5))  # 1
 
     # 找到 key 且key 重复
     print(bis.bisect_key_left([1, 3, 3, 3, 5, 7], 3))  # 1

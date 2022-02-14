@@ -8,6 +8,7 @@ import numpy as np
 import sys
 import random as rand
 
+from collections import *
 
 class Queue_array:
     """
@@ -64,6 +65,7 @@ class Queue_array:
 
     def __repr__(self):
         return ','.join(self._items[self._head : self._tail])
+
 
 
 class CircularQueue:
@@ -245,6 +247,60 @@ class BlockingQueue:
             return None
 
 
+class EmptyError(ValueError):
+    pass
+
+
+class MonotonicQueue:
+    """
+    单调队列
+
+    在 O(1) 的时间复杂度下, 动态维持队列的单调性
+
+    """
+
+    def __init__(self, initial=None):
+
+        self.data = deque()
+
+        if initial:
+
+            for item in initial:
+                self.push(item)
+
+    def push(self, value):
+        """
+        在尾部弹出所有比新的元素小的元素, 然后在尾部插入一个新的元素,
+
+        显然, 此时队列从头到尾是单调递减的, 头部的元素就是最大的元素
+
+        :param value:
+        :return:
+        """
+        while len(self.data) > 0 and self.data[-1] < value:
+            self.data.pop()
+
+        self.data.append(value)
+
+    def pop(self):
+        """
+        从队列头部弹出元素, 即最大的元素
+
+        :return:
+        """
+        if len(self.data) == 0:
+            raise EmptyError('the queue is empty')
+
+        return self.data.popleft()
+
+    def get_max(self):
+
+        if len(self.data) == 0:
+            raise EmptyError('the queue is empty')
+
+        return self.data[0]
+
+
 if __name__ == '__main__':
 
     # 1. 顺序队列
@@ -267,29 +323,40 @@ if __name__ == '__main__':
     # print(queue)
 
     #2. 循环队列
-    queue = CircularQueue(8)
+    # queue = CircularQueue(8)
+    #
+    # string_list=['e','f','g','h','i','j']
+    #
+    # for ele in string_list:
+    #     queue.enqueue(ele)
+    #
+    # print(queue._items)
+    #
+    # for i in range(3):
+    #     print('pop:',queue.dequeue())
+    #
+    # print(queue._items)
+    #
+    # queue.enqueue('a')
+    # queue.enqueue('b')
+    # print(queue._items)
+    #
+    # queue.enqueue('c')
+    # queue.enqueue('d')
+    # print(queue._items)
+    #
+    # queue.enqueue('e')
 
-    string_list=['e','f','g','h','i','j']
 
-    for ele in string_list:
-        queue.enqueue(ele)
+    # 3. 单调队列
 
-    print(queue._items)
+    queue = MonotonicQueue([1,3,1,2])
+    print(queue.data)
+    print(queue.get_max())
 
-    for i in range(3):
-        print('pop:',queue.dequeue())
+    queue.push(0)
+    print(queue.data)
 
-    print(queue._items)
-
-    queue.enqueue('a')
-    queue.enqueue('b')
-    print(queue._items)
-
-    queue.enqueue('c')
-    queue.enqueue('d')
-    print(queue._items)
-
-    queue.enqueue('e')
 
 
 
